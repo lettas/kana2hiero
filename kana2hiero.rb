@@ -24,5 +24,7 @@ table = {
 # 「きゃ」みたいに2文字で構成されているやつに優先的にマッチさせる
 regex = table.keys.sort_by {|s| -s.length}.join("|")
 
-p "とうきょうととっきょきょかきょく".gsub(/#{regex}/, table)
+STDIN.each_line do |text|
+  puts text.chomp.gsub(/#{regex}/, table)
+end
 
